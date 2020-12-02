@@ -209,6 +209,15 @@ namespace ProjetoEduxRemake
         {
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader());
+
+            });
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -262,7 +271,6 @@ namespace ProjetoEduxRemake
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -280,8 +288,9 @@ namespace ProjetoEduxRemake
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Edux V1");
             });
-
             app.UseSwagger();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

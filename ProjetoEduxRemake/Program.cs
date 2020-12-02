@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ProjetoEduxRemake
 {
+#pragma warning disable CS1591
     public class Program
     {
         public static void Main(string[] args)
@@ -24,4 +25,5 @@ namespace ProjetoEduxRemake
                     webBuilder.UseStartup<Startup>();
                 });
     }
+#pragma warning restore CS1591
 }

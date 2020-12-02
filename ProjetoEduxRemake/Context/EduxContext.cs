@@ -22,6 +22,7 @@ namespace ProjetoEduxRemake.Context
         public DbSet<ObjetivoAluno> ObjetivosAlunos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Total> Totais { get; set; }
+        public DbSet<Ranking> Rankings { get; set; }
 
 
 
