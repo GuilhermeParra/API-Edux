@@ -16,12 +16,15 @@ namespace ProjetoEduxRemake.Domains
         public int TotalObjetivo { get; set; }
         public Guid IdCurtida { get; set; }
         [ForeignKey("Curtida")]
+        [NotMapped]
         public Curtida Curtida { get; set; }
-        public Guid ObjetivoAluno { get; set; }
+        public Guid IdObjetivoAluno { get; set; }
         [ForeignKey("ObjetivoAluno")]
-        public ObjetivoAluno IdObjetivoAluno { get; set; }
+        [NotMapped]
+        public ObjetivoAluno ObjetivoAluno { get; set; }
         public Guid IdDica { get; set; }
         [ForeignKey("Dica")]
+        [NotMapped]
         public Dica Dica { get; set; }
     }
 }
